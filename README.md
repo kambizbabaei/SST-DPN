@@ -29,7 +29,7 @@ python train.py
 
 ### Kaggle notebook
 
-To run the project inside a Kaggle Notebook, follow the step-by-step cell outline in [`kaggle_notebook_cells.md`](kaggle_notebook_cells.md). The outline mirrors `train.py`, installs the required packages, and exposes every run parameter as an editable local variable so you can experiment without touching the source files or modifying `train.py`.
+To run the project inside a Kaggle Notebook, follow the step-by-step cell outline in [`kaggle_notebook_cells.md`](kaggle_notebook_cells.md). The outline mirrors `train.py`, installs the required packages, and exposes every run parameter as an editable local variable so you can experiment without touching the source files or modifying `train.py`. The document also lists how each cell maps to the core repository modules (data loading, model definition, training loops, and evaluation) so you can confirm the full training flow is represented before running any optional experiments such as the `compare_model/` baselines.
 ## Rusults and Visualization
 
 In the following datasets we have used the official criteria for dividing the training and test sets:

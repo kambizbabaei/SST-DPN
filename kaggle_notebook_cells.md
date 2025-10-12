@@ -2,6 +2,17 @@
 
 The following cells reproduce the behaviour of `train.py` in a Kaggle Notebook without requiring any edits to the original script. Each cell is self-contained and uses local variables so you can adjust configuration without touching other cells or modifying `train.py`. Update the `CONFIGURATION` cell to change the dataset, subject, or training hyper-parameters.
 
+### How this notebook mirrors the repository flow
+
+| Repository component | Purpose | Notebook cell(s) |
+| --- | --- | --- |
+| `load_data.py` | Downloads (when necessary) and prepares the EEG datasets. | **Cell 6 – Data Loading and Dataloaders** |
+| `model.py` & `model_utils.py` | Define the SST-DPN architecture and its helper building blocks. | **Cell 4 – Imports and Utility Functions** and **Cell 7 – Model, Losses, and First Phase Training** |
+| `dpl_utils.py` | Provides the prototype-learning regularisers used during optimisation. | **Cell 4** and **Cell 5 – Helper Functions** |
+| `train.py` | Orchestrates data splitting, two-phase training, checkpointing, and evaluation. | **Cells 3–9**, which follow the same sequence of operations | 
+
+The optional `compare_model/` baselines are not part of `train.py`; you can import and experiment with them after running the core training cells if needed.
+
 ---
 
 ## Cell 1 – Environment Setup
