@@ -26,6 +26,10 @@ All data will be downloaded automatically except for the BCI3-4A dataset. Downlo
 python train.py
 
 *Since my original project was highly integrated, this training code has been simplified with the help of ChatGPT. I have tested it and confirmed that it can run directly, but I cannot guarantee its complete correctness.*
+
+### Kaggle notebook
+
+To run the project inside a Kaggle Notebook, follow the step-by-step cell outline in [`kaggle_notebook_cells.md`](kaggle_notebook_cells.md). The outline mirrors `train.py`, installs the required packages, and exposes every run parameter as an editable local variable so you can experiment without touching the source files or modifying `train.py`.
 ## Rusults and Visualization
 
 In the following datasets we have used the official criteria for dividing the training and test sets:
