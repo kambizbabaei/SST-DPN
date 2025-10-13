@@ -29,7 +29,15 @@ python train.py
 
 ### Kaggle notebook
 
-To run the project inside a Kaggle Notebook, follow the step-by-step cell outline in [`kaggle_notebook_cells.md`](kaggle_notebook_cells.md). The outline mirrors `train.py`, installs the required packages, and exposes every run parameter as an editable local variable so you can experiment without touching the source files or modifying `train.py`. The document also lists how each cell maps to the core repository modules (data loading, model definition, training loops, and evaluation) so you can confirm the full training flow is represented before running any optional experiments such as the `compare_model/` baselines. After configuring the run, the dedicated dataset-download cell fetches the BNCI competition archives (2a or 2b) directly from the official BBCI links and caches them under `/kaggle/working/moabb_datasets`, so the later data-loading cell can reuse them without any manual uploads.
+To reproduce the full training pipeline on Kaggle without cloning this repository:
+
+1. Create a new Kaggle Notebook (GPU optional but recommended) and enable **Internet** access.
+2. Copy the cells from [`kaggle_notebook_cells.md`](kaggle_notebook_cells.md) into the notebook in order.
+3. Adjust any run parameters directly in **Cell&nbsp;2** (`CONFIG`) to experiment with different subjects, splits, or hyper-parameters.
+4. Execute the cells sequentially. **Cell&nbsp;3** downloads the BNCI 2a/2b archives from the official BBCI links, **Cells&nbsp;4–7** recreate all project modules inside the notebook, and **Cells&nbsp;8–10** mirror `train.py`'s two-phase training and evaluation flow.
+5. Optional: add extra cells after Cell&nbsp;10 if you want to port the `compare_model/` baselines or save the trained weights from `/kaggle/working/best_model.pth`.
+
+Because every module is defined inside the notebook cells, the workflow no longer depends on cloning the Git repository—uploading code files as a Kaggle dataset is no longer required.
 ## Rusults and Visualization
 
 In the following datasets we have used the official criteria for dividing the training and test sets:
