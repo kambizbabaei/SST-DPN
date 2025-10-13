@@ -26,6 +26,18 @@ All data will be downloaded automatically except for the BCI3-4A dataset. Downlo
 python train.py
 
 *Since my original project was highly integrated, this training code has been simplified with the help of ChatGPT. I have tested it and confirmed that it can run directly, but I cannot guarantee its complete correctness.*
+
+### Kaggle notebook
+
+To reproduce the full training pipeline on Kaggle without cloning this repository:
+
+1. Create a new Kaggle Notebook (GPU optional but recommended) and enable **Internet** access.
+2. Copy the cells from [`kaggle_notebook_cells.md`](kaggle_notebook_cells.md) into the notebook in order.
+3. Adjust any run parameters directly in **Cell&nbsp;2** (`CONFIG`) to experiment with different subjects, splits, or hyper-parameters.
+4. Execute the cells sequentially. **Cell&nbsp;3** downloads the BNCI 2a/2b archives from the official BBCI links, **Cells&nbsp;4–7** recreate all project modules inside the notebook, and **Cells&nbsp;8–10** mirror `train.py`'s two-phase training and evaluation flow.
+5. Optional: add extra cells after Cell&nbsp;10 if you want to port the `compare_model/` baselines or save the trained weights from `/kaggle/working/best_model.pth`.
+
+Because every module is defined inside the notebook cells, the workflow no longer depends on cloning the Git repository—uploading code files as a Kaggle dataset is no longer required.
 ## Rusults and Visualization
 
 In the following datasets we have used the official criteria for dividing the training and test sets:
