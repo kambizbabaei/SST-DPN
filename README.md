@@ -26,6 +26,10 @@ All data will be downloaded automatically except for the BCI3-4A dataset. Downlo
 python train.py
 
 *Since my original project was highly integrated, this training code has been simplified with the help of ChatGPT. I have tested it and confirmed that it can run directly, but I cannot guarantee its complete correctness.*
+
+### Kaggle notebook
+
+To run the project inside a Kaggle Notebook, follow the step-by-step cell outline in [`kaggle_notebook_cells.md`](kaggle_notebook_cells.md). The outline mirrors `train.py`, installs the required packages, and exposes every run parameter as an editable local variable so you can experiment without touching the source files or modifying `train.py`. The document also lists how each cell maps to the core repository modules (data loading, model definition, training loops, and evaluation) so you can confirm the full training flow is represented before running any optional experiments such as the `compare_model/` baselines. After configuring the run, the dedicated dataset-download cell fetches the BNCI competition archives (2a or 2b) directly from the official BBCI links and caches them under `/kaggle/working/moabb_datasets`, so the later data-loading cell can reuse them without any manual uploads.
 ## Rusults and Visualization
 
 In the following datasets we have used the official criteria for dividing the training and test sets:
